@@ -1,3 +1,10 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/forumsLib/main/source.lua"))()
+local Forums = Library.new("(Made By anos1876 and duffmaster69)")
+
+local preview = Forums:NewSection("Main 📦(click here)")
+
+
+preview:NewButton("Gojo Moveset (saitama)", function()
 local a = game:GetService("Players")
 local a = a.LocalPlayer
 local b = game:GetService("ReplicatedStorage")
@@ -1006,4 +1013,21 @@ local function a(a)
     end
 end
 c.AnimationPlayed:Connect(a)
-end
+end)
+
+preview1:Seperator()
+
+local drop = preview1:NewDropdown("Player List", {"Update To Get Players"}, function(item)
+   
+end)
+local plrTable = {}
+preview1:NewButton("Update Player List", function()
+    for i,v in pairs(game.Players:GetChildren()) do
+        if v ~= game.Players.LocalPlayer then
+            table.insert(plrTable, v.Name)
+        end
+    end
+    drop:Refresh(plrTable)
+end)
+
+preview:Seperator()
