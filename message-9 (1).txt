@@ -1006,4 +1006,4 @@ local function a(a)
     end
 end
 c.AnimationPlayed:Connect(a)
-end
+end)
